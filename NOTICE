@@ -1,0 +1,34 @@
+NOTICE
+
+Project: Forest Change Analytics Scripts (FCAS)
+Official source (authoritative repository): https://github.com/<org>/<repo>
+
+Copyright 2025 PROFONANPE and Ministerio del Ambiente (MINAM)
+
+Project maintainers:
+  Alexander Quevedo Chacón — alexander.quevedo@gmail.com
+  Luis Robles — albert.physik@gmail.com
+  Freddy Argoty — fargotty@gmail.com
+
+Project contributors:
+Arles Taboada - arlestaboada@gmail.com
+Jorge Nole - jorge.l.nole.m@gmail.com
+Isabel Pino -  isapc27@gmail.com
+Erick Principe - romelprincipea@gmail.com
+
+Attribution (Redistribution):
+  If you redistribute this software (in source or binary form), you must retain this NOTICE
+  and the LICENSE file, as required by the Apache License, Version 2.0.
+
+Official releases and provenance:
+  Only releases published from the official source above should be considered official.
+  Modified versions and forks must clearly indicate they are modified and are not endorsed
+  by the Project maintainers unless explicitly stated.
+
+Recommended acknowledgement (reports, internal docs, presentations, dashboards):
+  “Outputs generated using Forest Change Analytics Scripts (FCAS) v0.1, developed and maintained by
+   Alexander Quevedo Chacón, Luis Robles, and Freddy Argoty.”
+
+Third-party components:
+  This project may include or depend on third-party open-source components. Their respective
+  licenses and notices remain in effect and are distributed alongside this software where applicable.
