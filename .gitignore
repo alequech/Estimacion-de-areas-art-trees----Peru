@@ -1,2 +1,7 @@
 data_2025/bases_consolidadas/*.csv
 data_2025/bases_para_calculo/*.csv
+
+# Data outputs (do not track)
+data_2025/**/*.csv
+# LibreOffice lock files
+data_2025/**/.~lock*.csv#
