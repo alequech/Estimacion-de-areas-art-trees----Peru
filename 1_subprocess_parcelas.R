@@ -259,19 +259,19 @@ all_plots_defo <- lapply(lista_plots_defo, function(df) {
 }) %>%
   rbindlist(use.names = TRUE, fill = TRUE)
 
-df_defo_perdida_all <- filter(
-  df_cleaned,
-  plot_id %in% all_plots_defo$plot_id
-) |>
-  left_join(
-    select(data_filtrado, plot_id, lat, lon),
-    join_by(plot_id == plot_id)
-  )
+#df_defo_perdida_all <- filter(
+#  df_cleaned,
+#  plot_id %in% all_plots_defo$plot_id
+#) |>
+#  left_join(
+#    select(data_filtrado, plot_id, lat, lon),
+#    join_by(plot_id == plot_id)
+#  )
 
-write.csv(
-  df_defo_perdida_all,
-  paste0(dir_defo, "/", "deforestacion_perdida_plots_", ecozona, ".csv")
-)
+#write.csv(
+#  df_defo_perdida_all,
+#  paste0(dir_defo, "/", "deforestacion_perdida_plots_", ecozona, ".csv")
+#)
 
 
 c_deforestacion_nat <- c_trans %>%
@@ -307,15 +307,15 @@ all_plots_defonat <- lapply(seq_along(lista_plots_defo), function(i) {
   df
 }) %>% bind_rows()
 
-df_perdida_nat_plots <- df_cleaned %>%
-  filter(plot_id %in% all_plots_defonat$plot_id) %>%
-  left_join(select(data_filtrado, plot_id, lat, lon), join_by(plot_id == plot_id))
+#df_perdida_nat_plots <- df_cleaned %>%
+#  filter(plot_id %in% all_plots_defonat$plot_id) %>%
+#  left_join(select(data_filtrado, plot_id, lat, lon), join_by(plot_id == plot_id))
 
-write.csv(
-  df_perdida_nat_plots,
-  file.path(dir_perdida, paste0("def_natural_plots_", ecozona, ".csv")),
-  row.names = FALSE
-)
+#write.csv(
+#  df_perdida_nat_plots,
+#  file.path(dir_perdida, paste0("def_natural_plots_", ecozona, ".csv")),
+#  row.names = FALSE
+#)
 
 
 tf_total_por_periodo <- c_trans %>%
@@ -573,20 +573,20 @@ df_sample_degraN <- safe_bind_fill(
 ) %>%
   dedupe_wide_rows()
 
-left_join(
-  df_sample_degraA,
-  select(data_filtrado, plot_id, lat, lon),
-  join_by(plot_id == plot_id)
-) |>
-  write.csv(paste0(dir_degra, "/", "plots_degra_Antropica_", ecozona, ".csv"))
+#left_join(
+#  df_sample_degraA,
+#  select(data_filtrado, plot_id, lat, lon),
+#  join_by(plot_id == plot_id)
+#) |>
+#  write.csv(paste0(dir_degra, "/", "plots_degra_Antropica_", ecozona, ".csv"))
 
 
-left_join(
-  df_sample_degraN,
-  select(data_filtrado, plot_id, lat, lon),
-  join_by(plot_id == plot_id)
-) |>
-  write.csv(paste0(dir_degra, "/", "plots_degra_Natural_", ecozona, ".csv"))
+#left_join(
+#  df_sample_degraN,
+#  select(data_filtrado, plot_id, lat, lon),
+#  join_by(plot_id == plot_id)
+#) |>
+#  write.csv(paste0(dir_degra, "/", "plots_degra_Natural_", ecozona, ".csv"))
 
 
 resumen_por_estrato_DegraA <- df_sample_degraA %>%
@@ -805,25 +805,25 @@ df_sample_recovN <- safe_bind_fill(
 ) %>%
   dedupe_wide_rows()
 
-left_join(
-  df_sample_recovA,
-  select(data_filtrado, plot_id, lat, lon),
-  by = "plot_id"
-) %>%
-  write.csv(
-    paste0(dir_recu, "/", "plots_recuperacionTF_Antropica_", ecozona, ".csv"),
-    row.names = FALSE
-  )
+#left_join(
+#  df_sample_recovA,
+#  select(data_filtrado, plot_id, lat, lon),
+#  by = "plot_id"
+#) %>%
+#  write.csv(
+#    paste0(dir_recu, "/", "plots_recuperacionTF_Antropica_", ecozona, ".csv"),
+#    row.names = FALSE
+#  )
 
-left_join(
-  df_sample_recovN,
-  select(data_filtrado, plot_id, lat, lon),
-  by = "plot_id"
-) %>%
-  write.csv(
-    paste0(dir_recu, "/", "plots_recuperacionTF_Natural_", ecozona, ".csv"),
-    row.names = FALSE
-  )
+#left_join(
+#  df_sample_recovN,
+#  select(data_filtrado, plot_id, lat, lon),
+#  by = "plot_id"
+#) %>%
+#  write.csv(
+#    paste0(dir_recu, "/", "plots_recuperacionTF_Natural_", ecozona, ".csv"),
+#    row.names = FALSE
+#  )
 
 resumen_por_estrato_RecovA <- df_sample_recovA %>%
   group_by(estrato) %>%
@@ -1041,19 +1041,19 @@ all_plots_recupera_TNF_N <- lapply(lista_plots_recupera_TNF_N, function(df) {
 }) %>%
   rbindlist(use.names = TRUE, fill = TRUE)
 
-plots_recuperacionN_TNF <- filter(
-  df_cleaned,
-  plot_id %in% all_plots_recupera_TNF_N$plot_id
-) |>
-  left_join(
-    select(data_filtrado, plot_id, lat, lon),
-    join_by(plot_id == plot_id)
-  )
+#plots_recuperacionN_TNF <- filter(
+#  df_cleaned,
+#  plot_id %in% all_plots_recupera_TNF_N$plot_id
+#) |>
+#  left_join(
+#    select(data_filtrado, plot_id, lat, lon),
+#    join_by(plot_id == plot_id)
+#  )
 
-write.csv(
-  plots_recuperacionN_TNF,
-  paste0(dir_recu, "/", "plots_recu_TNF_Natural_", ecozona, ".csv")
-)
+#write.csv(
+#  plots_recuperacionN_TNF,
+#  paste0(dir_recu, "/", "plots_recu_TNF_Natural_", ecozona, ".csv")
+#)
 
 
 all_plots_recupera_TNF_A <- lapply(lista_plots_recupera_TNF_A, function(df) {
@@ -1062,20 +1062,20 @@ all_plots_recupera_TNF_A <- lapply(lista_plots_recupera_TNF_A, function(df) {
 }) %>%
   rbindlist(use.names = TRUE, fill = TRUE)
 
-plots_recuperacionA_TNF <- filter(
-  df_cleaned,
-  plot_id %in% all_plots_recupera_TNF_A$plot_id
-) |>
-  left_join(
-    select(data_filtrado, plot_id, lat, lon),
-    join_by(plot_id == plot_id)
-  )
+#plots_recuperacionA_TNF <- filter(
+#  df_cleaned,
+#  plot_id %in% all_plots_recupera_TNF_A$plot_id
+#) |>
+#  left_join(
+#    select(data_filtrado, plot_id, lat, lon),
+#    join_by(plot_id == plot_id)
+#  )
 
 
-write.csv(
-  plots_recuperacionA_TNF,
-  paste0(dir_recu, "/", "plots_recu_TNF_Antropica_", ecozona, ".csv")
-)
+#write.csv(
+#  plots_recuperacionA_TNF,
+#  paste0(dir_recu, "/", "plots_recu_TNF_Antropica_", ecozona, ".csv")
+#)
 
 
 
@@ -1222,46 +1222,46 @@ write.csv(
   row.names = FALSE
 )
 
-permanencia_plots <- dplyr::bind_rows(incluidos_list) %>%
-  dplyr::arrange(Periodo, estrato, plot_id)
-if (exists("data_filtrado")) {
-  permanencia_plots <- permanencia_plots %>%
-    dplyr::left_join(
-      dplyr::select(data_filtrado, plot_id, lat, lon),
-      by = "plot_id"
-    )
-}
-write.csv(
-  permanencia_plots,
-  file.path(dir_permanecia, paste0("permanencia_plots_", ecozona, ".csv")),
-  row.names = FALSE
-)
+#permanencia_plots <- dplyr::bind_rows(incluidos_list) %>%
+#  dplyr::arrange(Periodo, estrato, plot_id)
+#if (exists("data_filtrado")) {
+#  permanencia_plots <- permanencia_plots %>%
+#    dplyr::left_join(
+#      dplyr::select(data_filtrado, plot_id, lat, lon),
+#      by = "plot_id"
+#    )
+#}
+#write.csv(
+#  permanencia_plots,
+#  file.path(dir_permanecia, paste0("permanencia_plots_", ecozona, ".csv")),
+#  row.names = FALSE
+#)
 
-excl_audit_detalle <- excl_tbl %>%
-  dplyr::arrange(Periodo, estrato, plot_id, tipo)
-if (exists("data_filtrado")) {
-  excl_audit_detalle <- excl_audit_detalle %>%
-    dplyr::left_join(
-      dplyr::select(data_filtrado, plot_id, lat, lon),
-      by = "plot_id"
-    )
-}
-write.csv(
-  excl_audit_detalle,
-  file.path(
-    dir_permanecia,
-    paste0("permanencia_excluidos_detalle_", ecozona, ".csv")
-  ),
-  row.names = FALSE
-)
+#excl_audit_detalle <- excl_tbl %>%
+#  dplyr::arrange(Periodo, estrato, plot_id, tipo)
+#if (exists("data_filtrado")) {
+#  excl_audit_detalle <- excl_audit_detalle %>%
+#    dplyr::left_join(
+#      dplyr::select(data_filtrado, plot_id, lat, lon),
+#      by = "plot_id"
+#    )
+#}
+#write.csv(
+ # excl_audit_detalle,
+ # file.path(
+  #  dir_permanecia,
+  #  paste0("permanencia_excluidos_detalle_", ecozona, ".csv")
+  #),
+  #row.names = FALSE
+#)
 
-excl_audit <- excl_tbl %>% dplyr::distinct(Periodo, plot_id)
-write.csv(
-  excl_audit,
-  file.path(
-    dir_permanecia,
-    paste0("permanencia_exclusiones_SOLOperiodoTF_", ecozona, ".csv")
-  ),
-  row.names = FALSE
-)
+#excl_audit <- excl_tbl %>% dplyr::distinct(Periodo, plot_id)
+#write.csv(
+#  excl_audit,
+#  file.path(
+#    dir_permanecia,
+#    paste0("permanencia_exclusiones_SOLOperiodoTF_", ecozona, ".csv")
+#  ),
+#  row.names = FALSE
+#)
 gc()

@@ -40,9 +40,9 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 sufijo <- "completo_limpio_actualizado_01_09_LR.csv"
 
-zh <- read_csv(paste0("data_2025/bases_iniciales/ZH_", sufijo))
+zh <- read_csv(paste0("data_2025/bases_consolidas/ZH_", sufijo))
 table(zh$turbera_central)
-sb <- read_csv(paste0("data_2025/bases_iniciales/SB_", sufijo))
+sb <- read_csv(paste0("data_2025/bases_consolidas/SB_", sufijo))
 table(sb$turbera_central)
 
 zh_peatland <- filter(zh, turbera_central == 401)
