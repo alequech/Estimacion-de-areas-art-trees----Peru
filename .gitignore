@@ -5,3 +5,11 @@ data_2025/bases_para_calculo/*.csv
 data_2025/**/*.csv
 # LibreOffice lock files
 data_2025/**/.~lock*.csv#
+
+# Data outputs (do not track)
+data_2025/**/*.csv
+data_2025/**/*.xlsx
+
+# LibreOffice lock files
+data_2025/**/.~lock*.csv#
+data_2025/**/.~lock*.xlsx#
